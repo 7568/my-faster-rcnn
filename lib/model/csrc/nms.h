@@ -23,7 +23,5 @@ at::Tensor nms(const at::Tensor& dets,
 #endif
   }
 
-  at::Tensor result =
-  (dets, scores, threshold);
-  return result;
+  return at::empty({0}, dets.options().dtype(at::kLong).device(at::kCPU));
 }
